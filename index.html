@@ -3,73 +3,332 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>This is my first page heading</title>
+    <title>Tanjimul Hassan Toha | Portfolio</title>
+    <style>
+        /* ========== BASIC RESET ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: white;
+        }
+
+        /* ========== NAVBAR ========== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 60px;
+            z-index: 1000;
+        }
+
+        nav h1 {
+            font-size: 24px;
+            color: #00ffff;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #00ffff;
+        }
+
+        /* ========== SECTION GENERAL ========== */
+        section {
+            padding: 100px 10%;
+            min-height: 100vh;
+        }
+
+        h2 {
+            color: #00ffff;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        /* ========== HOME ========== */
+        #home {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100vh;
+        }
+
+        #home h2 {
+            font-size: 40px;
+        }
+
+        #home p {
+            font-size: 18px;
+            color: #ccc;
+            margin-top: 10px;
+        }
+
+        /* ========== ABOUT ========== */
+        #about {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 60px;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        #about img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #00ffff;
+            box-shadow: 0 0 20px #00ffff;
+        }
+
+        #about p {
+            flex: 1;
+            color: #ddd;
+            line-height: 1.7;
+        }
+
+        /* ========== SKILLS ========== */
+        #skills {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 60px;
+            margin-top: 50px;
+        }
+
+        .skills-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        #skills img {
+            width: 250px;
+            height: 250px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 0 15px #00ffff;
+        }
+
+        .skills-list {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .skill {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 12px;
+            text-align: center;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            background: #00ffff;
+            color: black;
+            transform: scale(1.05);
+            box-shadow: 0 0 15px #00ffff;
+        }
+
+        /* ========== PROJECTS ========== */
+        #projects {
+            margin-top: 50px;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            background: #00ffff;
+            color: black;
+            transform: scale(1.05);
+            box-shadow: 0 0 15px #00ffff;
+        }
+
+        /* ========== CONTACT ========== */
+        #contact {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 60px;
+            margin-top: 50px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 400px;
+        }
+
+        input, textarea {
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+
+        button {
+            background: #00ffff;
+            border: none;
+            padding: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: white;
+            color: #0f2027;
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            #about, .skills-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            #about img, #skills img {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Tanjimul</h1>
-    <h2>Hasan</h2>
-    <h3>Toha</h3>
-    <p>I am a student of cse.My university name is International Islamic University Of Chittagong </p>
-    <p>Lorem ipsum dolor sit amet <strong>Lorem ipsum dolor sit amet co.</strong>consectetur, adipisicing <br><em>Lorem ipsum dolor sit.</em><br>Corporis,libero! Ipsam error voluptates fuga pariatur consequatur eaque beatae sapiente,<hr> non explicabo veniam ducimus,<br> dolorum tempore nemo consectetur a nisi corrupti!</p>
- <a href="http://Google.com" target="_blank">Google</a><br>
-    <a href="http://youtube.com"target="_blank">Youtube</a><br>
-    <a href="http://chatgpt.com"target="_blank">Chatgpt</a><br>
-    <img src="Picture.jpg" alt="No picture"><br>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/7/71/Sky_landscape_nature.jpg"
-     alt="Dramatic sky over a distant landscape"
-     width="600"
-     height="400">
-    <ul type="Circle">
-        <li>This is my 1st order </li>
-        <li>This is my second order</li>
 
-        <ol>
-            <li>This is my 1st order in unorder</li>
-            <li>This is my 2nd order in unorder</li>
-            <li>This is my 3rd order in unorder</li>
-        </ol>
+    <!-- ======= NAVBAR ======= -->
+    <nav>
+        <h1>Toha's Portfolio</h1>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-        <li>This is my 3rd order</li>
-    </ul>
-    <ol type="i">
-        <li>I am toha</li>
-        <li>My home town is chittagong</li>
-        <ol type="A">
-            <li>
-                <p>I am a student.<strong>My university name is International islamic
-                        university of chittagong</strong> </p>
-            </li>
-        </ol>
-        <li>I am 20 years old</li>
-    </ol>
-    <h4>Html Table</h4>
-    <table>
-        <thead>
-            <tr>
-                <th> Name </th>
-                <th> Employee id </th>
-                <th> Employee role </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Tanjimul</td>
-                <td>C243016</td>
-                <td>Cse student</td>
-            </tr>
-            <tr>
-                <td>Hasan</td>
-                <td>C243016</td>
-                <td>Cse student</td>
-            </tr>
-            <tr>
-                <td>Toha</td>
-                <td>C243016</td>
-                <td>Cse student</td>
-            </tr>
-        </tbody>
-    </table>
+    <!-- ======= HOME ======= -->
+    <section id="home">
+        <h2>Hi, I'm <span style="color:#00ffff;">Tanjimul Hassan Toha</span></h2>
+        <p>Web Developer | Designer | Learner</p>
+    </section>
+
+    <!-- ======= ABOUT ======= -->
+    <section id="about">
+        <img src="C:\Users\mdtoh\Videos\DSC_1315.JPG" alt="My photo">
+        <div>
+            <h2>About Me</h2>
+            <p>
+                Hello! I'm <strong>Tanjimul Hassan Toha</strong>, a passionate web developer and creative thinker.  
+                I love building beautiful, responsive websites that bring ideas to life.  
+                Currently studying at <em>International Islamic University Chittagong</em>,  
+                learning and exploring new technologies every day.
+            </p>
+        </div>
+    </section>
+
+    <!-- ======= SKILLS ======= -->
+    <section id="skills">
+        <h2>My Skills</h2>
+        <div class="skills-container">
+            <img src="skills-photo.jpg" alt="Skills Image">
+            <div class="skills-list">
+                <div class="skill">HTML</div>
+                <div class="skill">CSS</div>
+                <div class="skill">JavaScript</div>
+                <div class="skill">Java</div>
+                <div class="skill">C Programming</div>
+                <div class="skill">Python</div>
+                <div class="skill">React</div>
+                <div class="skill">MySQL</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= PROJECTS ======= -->
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">💻 Personal Portfolio Website</div>
+            <div class="project-card">📱 To-Do List App</div>
+            <div class="project-card">🌐 Responsive Blog</div>
+            <div class="project-card">🖥️ Calculator App</div>
+        </div>
+    </section>
+
+    <!-- ======= CONTACT ======= -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="5" placeholder="Your Message"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- ======= FOOTER ======= -->
+    <footer>
+        © 2025 Tanjimul Hassan Toha | All Rights Reserved.
+    </footer>
+
 </body>
 </html>
-
-
