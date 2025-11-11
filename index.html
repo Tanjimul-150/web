@@ -5,21 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tanjimul Hassan Toha | Portfolio</title>
     <style>
-        /* ========== BASIC RESET ========== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             scroll-behavior: smooth;
         }
-
         body {
             font-family: "Poppins", sans-serif;
             background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
             color: white;
         }
-
-        /* ========== NAVBAR ========== */
         nav {
             position: fixed;
             top: 0;
@@ -33,45 +29,35 @@
             padding: 15px 60px;
             z-index: 1000;
         }
-
         nav h1 {
             font-size: 24px;
             color: #00ffff;
         }
-
         nav ul {
             display: flex;
             list-style: none;
         }
-
         nav ul li {
             margin-left: 30px;
         }
-
         nav ul li a {
             text-decoration: none;
             color: white;
             font-weight: 500;
             transition: 0.3s;
         }
-
         nav ul li a:hover {
             color: #00ffff;
         }
-
-        /* ========== SECTION GENERAL ========== */
         section {
             padding: 100px 10%;
             min-height: 100vh;
         }
-
         h2 {
             color: #00ffff;
             margin-bottom: 20px;
             font-size: 28px;
         }
-
-        /* ========== HOME ========== */
         #home {
             display: flex;
             flex-direction: column;
@@ -80,18 +66,14 @@
             text-align: center;
             height: 100vh;
         }
-
         #home h2 {
             font-size: 40px;
         }
-
         #home p {
             font-size: 18px;
             color: #ccc;
             margin-top: 10px;
         }
-
-        /* ========== ABOUT ========== */
         #about {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 15px;
@@ -101,7 +83,6 @@
             gap: 50px;
             flex-wrap: wrap;
         }
-
         #about img {
             width: 250px;
             height: 250px;
@@ -110,28 +91,23 @@
             border: 4px solid #00ffff;
             box-shadow: 0 0 20px #00ffff;
         }
-
         #about p {
             flex: 1;
             color: #ddd;
             line-height: 1.7;
         }
-
-        /* ========== SKILLS ========== */
         #skills {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 15px;
             padding: 60px;
             margin-top: 50px;
         }
-
         .skills-container {
             display: flex;
             align-items: center;
             gap: 40px;
             flex-wrap: wrap;
         }
-
         #skills img {
             width: 250px;
             height: 250px;
@@ -139,14 +115,12 @@
             object-fit: cover;
             box-shadow: 0 0 15px #00ffff;
         }
-
         .skills-list {
             flex: 1;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 15px;
         }
-
         .skill {
             background: rgba(255, 255, 255, 0.1);
             padding: 12px;
@@ -154,25 +128,20 @@
             border-radius: 10px;
             transition: 0.3s;
         }
-
         .skill:hover {
             background: #00ffff;
             color: black;
             transform: scale(1.05);
             box-shadow: 0 0 15px #00ffff;
         }
-
-        /* ========== PROJECTS ========== */
         #projects {
             margin-top: 50px;
         }
-
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 25px;
         }
-
         .project-card {
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
@@ -180,29 +149,24 @@
             text-align: center;
             transition: 0.3s;
         }
-
         .project-card:hover {
             background: #00ffff;
             color: black;
             transform: scale(1.05);
             box-shadow: 0 0 15px #00ffff;
         }
-
-        /* ========== CONTACT ========== */
         #contact {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 15px;
             padding: 60px;
             margin-top: 50px;
         }
-
         form {
             display: flex;
             flex-direction: column;
             gap: 15px;
             max-width: 400px;
         }
-
         input, textarea {
             padding: 12px;
             border-radius: 8px;
@@ -210,7 +174,6 @@
             outline: none;
             font-size: 16px;
         }
-
         button {
             background: #00ffff;
             border: none;
@@ -220,31 +183,25 @@
             border-radius: 8px;
             transition: 0.3s;
         }
-
         button:hover {
             background: white;
             color: #0f2027;
         }
-
-        /* ========== FOOTER ========== */
         footer {
             text-align: center;
             padding: 20px;
             margin-top: 40px;
             background: rgba(0, 0, 0, 0.7);
         }
-
         @media (max-width: 768px) {
             nav {
                 flex-direction: column;
                 text-align: center;
             }
-
             #about, .skills-container {
                 flex-direction: column;
                 text-align: center;
             }
-
             #about img, #skills img {
                 margin-bottom: 20px;
             }
@@ -253,7 +210,6 @@
 </head>
 <body>
 
-    <!-- ======= NAVBAR ======= -->
     <nav>
         <h1>Toha's Portfolio</h1>
         <ul>
@@ -265,14 +221,13 @@
         </ul>
     </nav>
 
-    <!-- ======= HOME ======= -->
     <section id="home">
         <h2>Hi, I'm <span style="color:#00ffff;">Tanjimul Hassan Toha</span></h2>
         <p>Web Developer | Designer | Learner</p>
     </section>
 
-    <!-- ======= ABOUT ======= -->
     <section id="about">
+        <!-- ✅ Corrected image path -->
         <img src="images/DSC_1315.JPG" alt="My photo">
         <div>
             <h2>About Me</h2>
@@ -285,11 +240,10 @@
         </div>
     </section>
 
-    <!-- ======= SKILLS ======= -->
     <section id="skills">
         <h2>My Skills</h2>
         <div class="skills-container">
-            <img src="skills-photo.jpg" alt="Skills Image">
+            <img src="images/skills-photo.jpg" alt="Skills Image">
             <div class="skills-list">
                 <div class="skill">HTML</div>
                 <div class="skill">CSS</div>
@@ -303,7 +257,6 @@
         </div>
     </section>
 
-    <!-- ======= PROJECTS ======= -->
     <section id="projects">
         <h2>My Projects</h2>
         <div class="project-grid">
@@ -314,7 +267,6 @@
         </div>
     </section>
 
-    <!-- ======= CONTACT ======= -->
     <section id="contact">
         <h2>Contact Me</h2>
         <form>
@@ -325,12 +277,9 @@
         </form>
     </section>
 
-    <!-- ======= FOOTER ======= -->
     <footer>
         © 2025 Tanjimul Hassan Toha | All Rights Reserved.
     </footer>
 
 </body>
 </html>
-
-
